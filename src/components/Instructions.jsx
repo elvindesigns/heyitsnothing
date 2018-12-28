@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { Jumbotron } from 'react-bootstrap';
-import Button from '@atlaskit/button';
 import SectionMessage from '@atlaskit/section-message';
 import Panel from '@atlaskit/panel';
 import TableTree, {

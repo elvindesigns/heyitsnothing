@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Button, { ButtonGroup } from '@atlaskit/button';
-import MainSection from '../components/MainSection';
+// import Button, { ButtonGroup } from '@atlaskit/button';
+// import MainSection from '../components/MainSection';
 import ContentWrapper from '../components/ContentWrapper';
 import PageTitle from '../components/PageTitle';
 import Instructions from '../components/Instructions';

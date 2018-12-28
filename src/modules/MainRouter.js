@@ -4,6 +4,8 @@ import { Router, Route, browserHistory } from 'react-router';
 import App from './App';
 import HomePage from '../pages/HomePage';
 import SettingsPage from '../pages/SettingsPage';
+import Games from '../pages/Games';
+import Rolls from '../pages/Rolls';
 
 export default class MainRouter extends Component {
   constructor() {
@@ -41,6 +43,8 @@ export default class MainRouter extends Component {
         <Route component={this.appWithPersistentNav()}>
           <Route path="/" component={HomePage} />
           <Route path="/settings" component={SettingsPage} />
+          <Route path="/games" component={Games} />
+          <Route path="/rolls" component={Rolls} />
         </Route>
       </Router>
     );

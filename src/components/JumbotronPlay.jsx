@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
-import { Button, Jumbotron } from 'react-bootstrap';
+import { Jumbotron } from 'react-bootstrap';
 // import Button from '@atlaskit/button';
 import rollDice from '../utils/rollDice';
-const Table = props => <div style={{ display: 'table' }} {...props} />;
-const Row = props => <div style={{ display: 'table-row' }} {...props} />;
-const Cell = props => (
-    <div style={{ display: 'table-cell', padding: 4 }} {...props} />
-);
-const Btn = props => (
-    <Cell>
-        <Button {...props} />
-    </Cell>
-);
+// const Table = props => <div style={{ display: 'table' }} {...props} />;
+// const Row = props => <div style={{ display: 'table-row' }} {...props} />;
+// const Cell = props => (
+    // <div style={{ display: 'table-cell', padding: 4 }} {...props} />
+// );
+// const Btn = props => (
+//     <Cell>
+//         <Button {...props} />
+//     </Cell>
+// );
 export default class JumbotronPlay extends Component {
     constructor(props) {
         super(props);
@@ -27,7 +27,8 @@ export default class JumbotronPlay extends Component {
             fSelect: [],
             lucky: [],
             lSelect: [],
-            condition: false
+            condition: false,
+            gameId: 1
         };
         this.handlefClick = this.handlefClick.bind(this);
         this.handlelClick = this.handlelClick.bind(this);
@@ -130,11 +131,13 @@ export default class JumbotronPlay extends Component {
 
         const data = {
             firstR: this.state.fSelect,
-            lastR: this.state.lucky[0]
+            lastR: this.state.lucky[0],
+            gameId: 0
         }
         console.log(data)
         try {
             await rollDice(data)
+
         } catch (error) {
             console.log(error);
         }
@@ -165,8 +168,8 @@ export default class JumbotronPlay extends Component {
                 <div className="row d-flex justify-content-center">
 
                     {this.state.frow.map(a => (
-                        <div className="btn-group mr-2" role="group" aria-label="First group">
-                            <button type="button" key={a} value={a} id={a} className="btn btn-outline-primary btn-lg" onClick={this.handlefClick}>{a}</button>
+                        <div className="btn-group mr-2" role="group" aria-label="First group" key={a}>
+                            <button type="button"  value={a} id={a} className="btn btn-outline-primary btn-lg" onClick={this.handlefClick}>{a}</button>
                         </div>
                     ))}
                 </div>
@@ -174,7 +177,7 @@ export default class JumbotronPlay extends Component {
                 <div className="row d-flex justify-content-center">
 
                     {this.state.srow.map(a => (
-                        <div className="btn-group mr-2" role="group" aria-label="First group">
+                        <div className="btn-group mr-2" role="group" key={a} aria-label="First group">
                             <button type="button" key={a} value={a} id={a} className="btn btn-outline-primary btn-lg" onClick={this.handlefClick}>{a}</button>
                         </div>
                     ))}
@@ -183,7 +186,7 @@ export default class JumbotronPlay extends Component {
                 <div className="row d-flex justify-content-center">
 
                     {this.state.trow.map(a => (
-                        <div className="btn-group mr-2 d-flex justify-content-center" role="group" aria-label="First group">
+                        <div className="btn-group mr-2 d-flex justify-content-center" key={a} role="group" aria-label="First group">
                             <button type="button" key={a} value={a} id={a} className="btn btn-outline-primary btn-lg" onClick={this.handlefClick}>{a}</button>
                         </div>
                     ))}
@@ -196,8 +199,8 @@ export default class JumbotronPlay extends Component {
                 <div className="row d-flex">
 
                     {this.state.ftrow.map(a => (
-                        <div className="btn-group mr-2" role="group" aria-label="First group">
-                            <button type="button" key={a} value={a} id={"LK" + a} className="btn btn-outline-primary btn-lg" active onClick={this.handlelClick}>{a}</button>
+                        <div className="btn-group mr-2" role="group" key={a} aria-label="First group">
+                            <button type="button" key={a} value={a} id={"LK" + a} className="btn btn-outline-primary btn-lg"  onClick={this.handlelClick}>{a}</button>
                         </div>
                     ))}
                 </div>

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router';
 import Nav, {
-  AkContainerTitle,
+  // AkContainerTitle,
   AkCreateDrawer,
   AkNavigationItem,
   AkSearchDrawer,
@@ -13,13 +13,14 @@ import SearchIcon from '@atlaskit/icon/glyph/search';
 import CreateIcon from '@atlaskit/icon/glyph/add';
 import AtlassianIcon from '@atlaskit/icon/glyph/atlassian';
 import ArrowleftIcon from '@atlaskit/icon/glyph/arrow-left';
-import Button, { ButtonGroup } from '@atlaskit/button';
-
+import Button from '@atlaskit/button';
+import EmojiActivityIcon from '@atlaskit/icon/glyph/emoji/activity';
+import BacklogIcon from '@atlaskit/icon/glyph/backlog';
 import CreateDrawer from '../components/CreateDrawer';
 import SearchDrawer from '../components/SearchDrawer';
 import HelpDropdownMenu from '../components/HelpDropdownMenu';
 import AccountDropdownMenu from '../components/AccountDropdownMenu';
-import scatterLogo from '../images/scatter-1.png';
+// import scatterLogo from '../images/scatter-1.png';
 import authorize from '../utils/authorize';
 
 export default class StarterNavigation extends React.Component {
@@ -27,7 +28,10 @@ export default class StarterNavigation extends React.Component {
     navLinks: [
       ['/', 'Home', DashboardIcon],
       ['/settings', 'Settings', GearIcon],
-    ]
+      ['/games', 'All Games', BacklogIcon],
+      ['/Rolls', 'Rolls', EmojiActivityIcon],
+    ],
+    account_name: ''
   };
 
   static contextTypes = {
@@ -108,8 +112,8 @@ export default class StarterNavigation extends React.Component {
                 />
               </Link>
             );
-          }, 
-          this)
+          },
+            this)
 
         }
       </Nav>
