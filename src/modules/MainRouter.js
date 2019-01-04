@@ -42,7 +42,7 @@ export default class MainRouter extends Component {
       <Router history={browserHistory}>
         <Route component={this.appWithPersistentNav()}>
           <Route path="/" component={HomePage} />
-          <Route path="/settings" component={SettingsPage} />
+          {/* <Route path="/settings" component={SettingsPage} /> */}
           <Route path="/games" component={Games} />
           <Route path="/rolls" component={Rolls} />
         </Route>

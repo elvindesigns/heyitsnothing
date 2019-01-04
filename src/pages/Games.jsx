@@ -58,7 +58,31 @@ export default class HomePage extends Component {
         return (
             <ContentWrapper>
                 <PageTitle>Games</PageTitle>
-                <MainSection />
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Start Date</th>
+                            <th scope="col">Expiry</th>
+                            <th scope="col">First Combo</th>
+                            <th scope="col">Lucky Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            this.state.games.map((game, index) => {
+                                return( <tr>
+                                    <th scope="row">{game.id}</th>
+                                    <td>{game.inittimestamp}</td>
+                                    <td>{game.expiry}</td>
+                                    <td>{game.first}</td>
+                                    <td>{game.last}</td>
+                                </tr>)
+                            })
+                        }
+                       
+                    </tbody>
+                </table>
             </ContentWrapper>
         );
     }
