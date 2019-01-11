@@ -65,37 +65,36 @@ export default class StarterNavigation extends React.Component {
         )}
         globalPrimaryIcon={globalPrimaryIcon}
         globalPrimaryItemHref="/"
-        globalSearchIcon={<SearchIcon label="Search icon" />}
         hasBlanket
         drawers={[
-          <AkSearchDrawer
-            backIcon={backIcon}
-            isOpen={this.state.openDrawer === 'search'}
-            key="search"
-            onBackButton={() => this.openDrawer(null)}
-            primaryIcon={globalPrimaryIcon}
-          >
-            <SearchDrawer
-              onResultClicked={() => this.openDrawer(null)}
-              onSearchInputRef={(ref) => {
-                this.searchInputRef = ref;
-              }}
-            />
-          </AkSearchDrawer>,
-          <AkCreateDrawer
-            backIcon={backIcon}
-            isOpen={this.state.openDrawer === 'create'}
-            key="create"
-            onBackButton={() => this.openDrawer(null)}
-            primaryIcon={globalPrimaryIcon}
-          >
-            <CreateDrawer
-              onItemClicked={() => this.openDrawer(null)}
-            />
-          </AkCreateDrawer>
+        //   <AkSearchDrawer
+        //     backIcon={backIcon}
+        //     isOpen={this.state.openDrawer === 'search'}
+        //     key="search"
+        //     onBackButton={() => this.openDrawer(null)}
+        //     primaryIcon={globalPrimaryIcon}
+        //   >
+        //     {/* <SearchDrawer
+        //       onResultClicked={() => this.openDrawer(null)}
+        //       onSearchInputRef={(ref) => {
+        //         this.searchInputRef = ref;
+        //       }}
+        //     /> */}
+        //  </AkSearchDrawer>,
+          // <AkCreateDrawer
+          //   backIcon={backIcon}
+          //   isOpen={this.state.openDrawer === 'create'}
+          //   key="create"
+          //   onBackButton={() => this.openDrawer(null)}
+          //   primaryIcon={globalPrimaryIcon}
+          // >
+          //   <CreateDrawer
+          //     onItemClicked={() => this.openDrawer(null)}
+          //   />
+          // </AkCreateDrawer>
         ]}
         globalAccountItem={AccountDropdownMenu}
-        globalCreateIcon={<CreateIcon label="Create icon" />}
+        // globalCreateIcon={<CreateIcon label="Create icon" />}
         globalHelpItem={HelpDropdownMenu}
         onSearchDrawerOpen={() => this.openDrawer('search')}
         onCreateDrawerOpen={() => this.openDrawer('create')}
