@@ -26,7 +26,7 @@ import authorize from '../utils/authorize';
 export default class StarterNavigation extends React.Component {
   state = {
     navLinks: [
-      ['/', 'Home', DashboardIcon],
+      ['/home', 'Home', DashboardIcon],
       // ['/settings', 'Settings', GearIcon],
       ['/games', 'All Games', BacklogIcon],
       ['/Rolls', 'Rolls', EmojiActivityIcon],
